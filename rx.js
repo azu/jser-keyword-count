@@ -4,7 +4,7 @@ var JSerStat = require("jser-stat").JSerStat;
 var countByGroup = require("jser-stat").compute.countByGroup;
 var stat = new JSerStat();
 
-console.log("年月\Babel\Traceur");
+console.log("年月\tRx");
 for (var i = 0; i < 12; i++) {
     var beginDate = new Date(2014, i, 1);
     var endDate = new Date(2014, i + 1, 1);
@@ -22,18 +22,13 @@ function con(beginDate, endDate) {
         item.tags.forEach(function (tag) {
             rank[tag] = ++rank[tag] || 1;
         });
-        var babel = /react/i;
-        var traceur = /traceur/i;
-        if (babel.test(item.title) || babel.test(item.content)) {
-            rank["Babel"] = ++rank["Babel"] || 1;
-        }
-        if (traceur.test(item.title) || traceur.test(item.content)) {
-            rank["Traceur"] = ++rank["Traceur"] || 1;
+        var Rx = /rx/i;
+        if (Rx.test(item.title) || Rx.test(item.content)) {
+            rank["Rx"] = ++rank["Rx"] || 1;
         }
     });
     //process.stdout.write("#" + weeks[0].weekNumber + " - #" + weeks[weeks.length - 1].weekNumber + ", ");
     process.stdout.write(beginDate.getFullYear() + "年" + (beginDate.getMonth() + 1) + "月" + "\t ");
-    process.stdout.write(String((rank["Babel"] || 0)) + "\t");
-    process.stdout.write(String((rank["Traceur"] || 0)) + "\t");
+    process.stdout.write(String((rank["Rx"] || 0)) + "\t");
     console.log("");
 }
