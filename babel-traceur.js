@@ -4,7 +4,7 @@ var JSerStat = require("jser-stat").JSerStat;
 var countByGroup = require("jser-stat").compute.countByGroup;
 var stat = new JSerStat();
 
-console.log("年月\Babel\Traceur");
+console.log("年月\tBabel\tTraceur");
 for (var i = 0; i < 12; i++) {
     var beginDate = new Date(2014, i, 1);
     var endDate = new Date(2014, i + 1, 1);
