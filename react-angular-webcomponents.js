@@ -1,7 +1,6 @@
 // LICENSE : MIT
 "use strict";
 var JSerStat = require("jser-stat").JSerStat;
-var countByGroup = require("jser-stat").compute.countByGroup;
 var stat = new JSerStat();
 
 console.log("年月\tWebComponents\tReact\tAngularJS");
